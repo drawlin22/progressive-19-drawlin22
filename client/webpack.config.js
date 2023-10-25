@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 
 module.exports = () => {
@@ -10,7 +11,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      // install: './src/js/install.js'
     },
     output: {
       filename: 'bundle.js',
@@ -18,20 +19,21 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
         title: 'Webpack Plugin',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'sw.js',
       }),
-      new WorkboxPlugin.GenerateSW()      
+      new MiniCssExtractPlugin(),
+      new GenerateSW()      
     ],
 
     module: {
       rules: [
         {
-        test: /\.css$i/,
+        test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
         {
