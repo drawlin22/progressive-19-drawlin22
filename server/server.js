@@ -16,7 +16,6 @@ app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
 // GIVEN a text editor web application
 // WHEN I run the text editor application from my terminal
 // WHEN I run my webpack plugins
-// THEN I find that I have a generated HTML file, service worker, and a manifest file
 // WHEN I use next-gen JavaScript in my application
 // THEN I find that the text editor still functions in the browser without errors
 // WHEN I open the text editor

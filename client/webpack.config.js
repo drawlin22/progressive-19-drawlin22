@@ -27,7 +27,32 @@ module.exports = () => {
         swDest: 'sw.js',
       }),
       new MiniCssExtractPlugin(),
-      new GenerateSW()      
+      new GenerateSW(),  
+      new WebpackPwaManifest({  
+        name: 'Webpack Plugin',
+        short_name: 'Webpack Plugin',
+        description: 'A webpack plugin',
+        background_color: '#ffffff',
+        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join('assets', 'icons'),
+          },
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '1024x1024', // you can also use the specifications pattern
+            destination: path.join('assets', 'icons'),
+          },
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '1024x1024',
+            purpose: 'maskable',
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
     ],
 
     module: {
