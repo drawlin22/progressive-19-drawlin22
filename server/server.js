@@ -11,10 +11,6 @@ require('./routes/htmlRoutes')(app);
 
 app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
 
-// ## Acceptance Criteria
-
-
-
 // WHEN I deploy to Heroku
 // THEN I should have proper build scripts for a webpack application
 // ```
