@@ -28,4 +28,6 @@ MIT
 # Credits
 Peer Colaboration:
 
-https://github.com/ColtonMakesStuff
+Chelsea Wagner: https://github.com/caf62219
+Kyle Jocoy: https://github.com/Kylyote/
+Colton Firestone:https://github.com/ColtonMakesStuff
